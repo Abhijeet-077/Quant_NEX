@@ -1,0 +1,50 @@
+# Server dependencies
+express==4.21.2
+express-session==1.18.1
+passport==0.7.0
+passport-local==1.0.0
+connect-pg-simple==10.0.0
+memorystore==1.6.7
+multer==1.4.5-lts.2
+axios==1.8.4
+zod==3.24.2
+zod-validation-error==3.4.0
+drizzle-orm==0.39.1
+drizzle-zod==0.7.0
+@neondatabase/serverless==0.10.4
+ws==8.18.0
+openai==4.95.1
+
+# Client dependencies
+react==18.3.1
+react-dom==18.3.1
+@tanstack/react-query==5.60.5
+wouter==3.3.5
+react-hook-form==7.55.0
+@hookform/resolvers==3.10.0
+next-themes==0.4.6
+lucide-react==0.292.0
+react-icons==5.4.0
+date-fns==3.6.0
+framer-motion==11.13.1
+recharts==2.15.2
+@nivo/core==0.89.1
+@nivo/bar==0.89.1
+@nivo/line==0.89.1
+@nivo/pie==0.89.1
+@nivo/heatmap==0.89.1
+
+# Build tools
+vite==5.4.14
+@vitejs/plugin-react==4.3.2
+esbuild==0.25.0
+typescript==5.6.3
+tsx==4.19.1
+tailwindcss==3.4.17
+postcss==8.4.47
+autoprefixer==10.4.20
+drizzle-kit==0.30.4
+
+# Note: This project uses npm for package management, so these dependencies
+# will be installed via package.json rather than this requirements.txt file.
+# This file is for documentation purposes.

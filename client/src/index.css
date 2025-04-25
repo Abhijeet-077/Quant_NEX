@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes float-opposite {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-opposite {
+  animation: float-opposite 5s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 20% 6%;
+  --muted: 220 10% 94%;
+  --muted-foreground: 220 10% 40%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 20% 6%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 20% 6%;
+  --border: 220 15% 85%;
+  --input: 220 15% 85%;
+  --primary: 260 100% 50%;
+  --primary-foreground: 260 100% 99%;
+  --secondary: 330 90% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 210 100% 50%;
+  --accent-foreground: 210 100% 99%;
+  --destructive: 0 95% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 260 100% 50%;
+  --radius: 0.5rem;
+
+  /* Chart colors */
+  --chart-1: 260 100% 50%;
+  --chart-2: 330 90% 50%;
+  --chart-3: 25 95% 55%;
+  --chart-4: 180 100% 45%;
+  --chart-5: 300 100% 60%;
+
+  /* Sidebar specific colors */
+  --sidebar-background: 260 90% 35%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 260 90% 30%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 260 90% 45%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 260 90% 25%;
+  --sidebar-ring: 260 90% 55%;
+}
+
+.dark {
+  --background: 260 35% 4%;
+  --foreground: 210 20% 98%;
+  --muted: 260 30% 10%;
+  --muted-foreground: 210 15% 85%;
+  --popover: 260 35% 4%;
+  --popover-foreground: 210 20% 98%;
+  --card: 260 35% 8%;
+  --card-foreground: 210 20% 98%;
+  --border: 260 30% 15%;
+  --input: 260 30% 15%;
+  --primary: 260 100% 65%;
+  --primary-foreground: 260 100% 99%;
+  --secondary: 330 95% 55%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 210 100% 65%;
+  --accent-foreground: 210 100% 99%;
+  --destructive: 0 95% 65%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 260 100% 65%;
+
+  /* Chart colors */
+  --chart-1: 260 100% 65%;
+  --chart-2: 330 95% 55%;
+  --chart-3: 25 95% 60%;
+  --chart-4: 180 100% 50%;
+  --chart-5: 300 100% 65%;
+
+  /* Sidebar specific colors */
+  --sidebar-background: 260 45% 12%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 260 90% 25%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 260 100% 65%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 260 45% 18%;
+  --sidebar-ring: 260 100% 65%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode enhancements */
+.dark .alternate-rows tr:nth-child(odd) {
+  background-color: hsl(260 35% 6%);
+}
+
+.dark .alternate-rows tr:nth-child(even) {
+  background-color: hsl(260 35% 8%);
+}
+
+.dark .alternate-cols > div:nth-child(odd) {
+  background-color: hsl(260 35% 6%);
+}
+
+.dark .alternate-cols > div:nth-child(even) {
+  background-color: hsl(260 35% 8%);
+}
+
+.dark .hover-card:hover {
+  background-color: hsl(260 35% 10%);
+  border-color: hsl(260 100% 65% / 0.5);
+}
+
+.dark .data-grid {
+  border-color: hsl(260 30% 15%);
+}
+
+.dark .data-grid-header {
+  background-color: hsl(260 35% 10%);
+  border-bottom: 1px solid hsl(260 30% 15%);
+}
+
+.dark .data-grid-cell {
+  border-color: hsl(260 30% 15%);
+}
+
+/* Neon wave effect for dark mode */
+@keyframes neonWave {
+  0% {
+    box-shadow: 0 0 5px 0px hsl(260, 100%, 70%), 0 0 10px 2px hsl(260, 100%, 60%), 0 0 15px 5px hsl(260, 100%, 50%);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    box-shadow: 0 0 5px 0px hsl(300, 100%, 70%), 0 0 10px 2px hsl(300, 100%, 60%), 0 0 15px 5px hsl(300, 100%, 50%);
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+  }
+  50% {
+    box-shadow: 0 0 5px 0px hsl(330, 100%, 70%), 0 0 10px 2px hsl(330, 100%, 60%), 0 0 15px 5px hsl(330, 100%, 50%);
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+  }
+  75% {
+    box-shadow: 0 0 5px 0px hsl(210, 100%, 70%), 0 0 10px 2px hsl(210, 100%, 60%), 0 0 15px 5px hsl(210, 100%, 50%);
+    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+  }
+  100% {
+    box-shadow: 0 0 5px 0px hsl(260, 100%, 70%), 0 0 10px 2px hsl(260, 100%, 60%), 0 0 15px 5px hsl(260, 100%, 50%);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+.dark .neon-wave-effect {
+  position: absolute;
+  pointer-events: none;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: transparent;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  animation: neonWave 4s infinite ease-in-out;
+  filter: blur(8px);
+}
+
+.dark .neon-wave-effect.active {
+  opacity: 0.15;
+}
+
+.dark .neon-wave-container {
+  position: relative;
+  overflow: visible;
+}
+
+/* Custom loading spinner */
+.spinner {
+  @apply inline-block h-6 w-6 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite];
+}
+
+/* Slide-in animation for chat messages */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message-animation {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Custom font styles */
+.font-heading {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* File upload styles */
+.file-drop-zone {
+  @apply border-2 border-dashed border-border rounded-lg p-6 transition-colors;
+}
+
+.file-drop-zone.active {
+  @apply border-primary bg-primary/5;
+}
